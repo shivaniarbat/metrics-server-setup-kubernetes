@@ -153,10 +153,10 @@ kubectl -n kube-system edit deployment.apps metrics-server
 ENTER THE INSERT/EDIT MODE
 ADD BELOW COMMANDS IN THE FILE 
 ```yaml
-	command:
-        	- /metrics-server
-        	- --kubelet-insecure-tls
-        	- --kubelet-preferred-address-types=InternalIP
+command:
+- /metrics-server
+- --kubelet-insecure-tls
+- --kubelet-preferred-address-types=InternalIP
 ```
 ```yaml
      k8s-app: metrics-server
@@ -235,3 +235,7 @@ Enable/restart Kubelet for every change you make for the kubeadm or deploy anyth
 sudo systemctl restart kubelet
 sudo systemctl enable kubelet 
 ```
+
+## References: 
+1. https://kubernetes.io/docs/setup/production-environment/
+2. https://github.com/kubernetes-sigs/metrics-server
